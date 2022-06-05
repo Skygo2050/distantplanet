@@ -1,0 +1,1208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+
+.rocket {
+    width: 110px;
+    height: 120px;
+/*background-color: red;*/
+    position: absolute;
+    bottom: 120px;
+    background-image: url(rocket.png);
+    background-size: cover;
+}
+
+.GameArea {
+    width: 400px;
+    height: 100vh;
+    background-image: url(space.jpg);
+    background-repeat: no-repeat;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px dashed rgb(9, 41, 172);
+    border-right: 5px dashed rgb(4, 46, 138);
+}
+
+.bullets {
+    position: absolute;
+    bottom: 40px;
+    left: 51%;
+    width: 20px;
+    height: 20px;
+    background: url(bullet.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+.rocketGame {
+    width: 100%;
+    height: 100vh;
+    background-image: url(earth.jpg);
+   background-size: cover;
+
+}
+
+.other {
+    width: 70px;
+    height: 110px;
+    position: absolute;
+    background-image: url(meteor.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    bottom: 120px;
+}
+
+.alien{
+    width: 500px;
+    height: 110px;
+    position: absolute;
+    background-image: url(alien.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    bottom: 120px;
+  }
+
+.Score {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 3.5rem;
+    z-index: 1;
+    border-radius: 1rem;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 18px;
+    background-color: rgba(194, 247, 49, 0.644);
+    color: rgb(36, 100, 238);
+    width: 250px;
+    height: 90px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.timer {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 3.5rem;
+    z-index: 1;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 18px;
+    background-color: rgba(161, 171, 177, 0.699);
+    color: rgba(3, 3, 3, 0.89);
+    width: 200px;
+    height: 60px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.explanationbox{
+    background-color: hsl(170, 92%, 94%);
+
+text-align: left;
+
+width: 100vw;
+min-height: 128vh;
+
+place-content: center;
+cursor: pointer;
+
+}
+
+.SelectQuestionpage{
+    background-color: hsla(177, 88%, 53%, 0.247);
+
+    text-align: left;
+    
+    width: 100vw;
+    min-height: 100vh;
+    
+    place-content: center;
+    cursor: pointer;
+}
+.showResultpage{
+    background-color: hsla(177, 88%, 53%, 0.247);
+
+    text-align: left;
+    
+    width: 100vw;
+    min-height: 100vh;
+    
+    place-content: center;
+    cursor: pointer;
+
+}
+
+.Question_form {
+    background-color: hsl(170, 92%, 94%);
+
+  text-align: left;
+
+    width: 100vw;
+    min-height: 115vh;
+    
+  
+    place-content: center;
+    cursor: pointer;
+
+
+}
+
+
+
+.btn1{
+padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+border-radius: 0.9rem;
+font-size: 1.5rem;
+text-transform: uppercase;
+background-color: rgba(5, 143, 120, 0.541);
+color: rgba(208, 255, 0, 0.986);
+margin-top:1.4rem ;
+margin-left: 40%;
+
+
+}
+.btn1:hover {
+border-radius:
+    1.3rem;
+background-color: rgba(66, 219, 19, 0.829);
+
+}
+
+
+.btn{
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.9rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: rgba(0, 255, 221, 0.959);
+    margin-top:0rem ;
+
+
+
+}
+.btn:hover {
+    border-radius:
+        1.3rem;
+    background-color: rgba(66, 219, 19, 0.829);
+
+}
+
+#quit{
+
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.9rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: rgba(0, 255, 221, 0.959);
+margin-top:1.4rem ;
+
+
+}
+#quit:hover{
+    border-radius:
+    1.3rem;
+background-color:red;
+
+}
+.Question {
+position: absolute;
+    background-color: rgba(19, 161, 196, 0.726);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+    padding: 2px 3px;
+    font-size: 23px;
+    width: 54vw;
+   
+    min-height: 18vh;
+margin : 7rem  13rem;
+    border-radius: 2.2rem;
+
+}
+
+.Question h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin: 1.2rem;
+
+}
+
+.Question li {
+    margin-left: 3rem;
+    list-style: none;
+    font-size: 1.5rem;
+    list-style-position: outside;
+
+}
+
+input {
+    cursor: pointer;
+
+}
+.Explain{
+    padding: 0.4rem 0.9rem;
+font-size: 1.5rem;
+font-weight: bold;
+border-radius: 0.9rem;
+background-color: rgb(37, 83, 236);
+height: 3.5rem;
+color: beige;
+
+}
+.Explain:hover {
+    border-radius:
+        1.2rem;
+    /* background-color: rgba(2, 231, 174, 0.692); */
+    
+
+}
+#submit {
+    padding: 0.4rem 0.9rem;
+    margin-bottom: 1rem;
+    margin-left: 16rem;
+    border-radius: 0.9rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: rgb(255, 251, 0);
+
+}
+
+#submit:hover {
+    border-radius:
+        1.2rem;
+    background-color: rgba(66, 219, 19, 0.87);
+
+}
+.startbutton ,.startbutton1{
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.9rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: rgba(0, 255, 221, 0.959);
+margin-top:1rem ;
+margin-top:-0.7rem ;
+
+}
+.stopbutton{
+
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: rgba(0, 255, 221, 0.959);
+margin-top:0rem ;
+
+
+}
+
+.stopbutton:hover{
+    border-radius:
+    1.2rem;
+background-color: red;
+
+}
+.btn2{
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.9rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: rgba(0, 255, 221, 0.959);
+margin-top:1.4rem ;
+
+}
+.btn2:hover {
+    border-radius:
+        1.3rem;
+    background-color: rgba(66, 219, 19, 0.829);
+
+}
+.startbutton:hover,.startbutton1:hover {
+    border-radius:
+        1.3rem;
+    background-color: rgba(66, 219, 19, 0.829);
+
+}
+#timerArea{
+position: relative;
+margin-left: 14rem;
+
+
+}
+.select2{
+    color: rgba(0, 0, 0, 0.932);
+}
+.select1{
+    color: rgb(15, 56, 238);
+}
+.TARGET{
+    color: rgb(6, 24, 56);
+    font-weight: bold;
+}
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) { 
+    .heading{
+        position: absolute;
+     
+      margin-top: 5rem;
+     margin-left: 23%;
+    font-size: 1rem;
+    font-weight: bold;
+    color:rgba(17, 90, 226, 0.829)
+    
+    }  
+    .form-control{
+        margin-left: 1.5rem;
+        margin-top: 1.5rem;
+       width: 80% ; 
+       font-size: medium;
+       font-weight: bold;
+       color: brown;
+     
+
+      
+    }
+    
+    .SelectQuestion{
+
+        position: absolute;
+        background-color: rgba(114, 247, 240, 0.726);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        font-size: 10px;
+        width: 40vw;
+        
+        min-height: 50vh;
+        margin : 12rem  6rem;
+        border-radius: 2.2rem;
+    
+    
+    }
+    .btn3{
+        padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+        border-radius: 0.9rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        background-color: rgba(5, 143, 120, 0.541);
+        color: rgba(208, 255, 0, 0.986);
+        margin-top:1.4rem ;
+        margin-left: 40%;
+        
+        
+        }
+        .btn3:hover {
+        border-radius:
+            1.3rem;
+        background-color: rgba(66, 219, 19, 0.829);
+        
+        }
+
+
+
+.heading{
+    position: absolute;
+ 
+  margin-top: 1.2rem;
+ margin-left: 4%;
+font-size: 1.5rem;
+font-weight: bold;
+color:rgba(17, 90, 226, 0.829)
+
+}
+.score1{
+    position: absolute;
+    margin-top:7.1rem ;
+    margin-left: 1.5rem;
+    font-size: 1.25rem;
+font-weight: bold;
+color:rgba(23, 158, 6, 0.938)
+}
+.score2{
+    position: absolute;
+    margin-top:12.8rem ;
+    margin-left: 1.1rem;
+    font-size: 1.1rem;
+font-weight: bold;
+color:rgba(143, 7, 143, 0.938);
+
+
+}
+.table{position: absolute;
+    width: 60%;
+    margin-left: 4rem;
+    margin-top: 22rem;
+   border:  solid 5px;
+   border-color: rgb(2, 14, 24);
+   background-color: rgba(34, 35, 36, 0.973);
+   color: rgb(240, 239, 245);
+   border-radius: 2.5rem;
+   }
+   
+   th,td,tr{
+       width: 8px;
+       
+   }
+
+   .StartScreen {
+    position: absolute;
+    background-color: rgba(5, 90, 168, 0.993);
+    color: white;
+    z-index: 1;
+    margin-top: 15rem;
+    margin-left: 19rem;
+    text-align: center;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    width: 40%;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 23px;
+
+}
+.againstartscreen,.againstartscreen1{
+
+    position: absolute;
+    background-color: rgba(5, 90, 168, 0.993);
+    color: white;
+    z-index: 1;
+    margin-top: 15rem;
+    margin-left: 19rem;
+    text-align: center;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    width: 40%;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 23px;
+
+
+
+
+
+}
+.SelectQuestion{
+
+    position: absolute;
+    background-color: rgba(114, 247, 240, 0.726);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 70vw;
+    
+    min-height: 50vh;
+    margin : 10.5rem  10rem;
+    border-radius: 2.2rem;
+
+
+}
+.btnS {
+
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.9rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: rgba(0, 255, 221, 0.959);
+margin-top:38.5rem ;
+    
+}
+.explanation{
+
+    position: absolute;
+    background-color: rgba(114, 247, 240, 0.726);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 70vw;
+    
+    min-height: 50vh;
+    margin : 5.8rem  10rem;
+    border-radius: 2.2rem;
+    }
+    
+    
+
+}
+/*Small devices(landscape phones, 576px and up)*/
+@media (min-width: 400px) and (max-width: 767.98px) {
+    .heading{
+        position: absolute;
+     
+      margin-top: 5rem;
+     margin-left: 23%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:rgba(17, 90, 226, 0.829)
+    
+    }
+    .form-control{
+        margin-left: 2rem;
+        margin-top: 1.5rem;
+       width: 80% ; 
+       font-size: medium;
+    }
+    .SelectQuestion{
+
+        position: absolute;
+        background-color: rgba(114, 247, 240, 0.726);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        font-size: 15px;
+        width: 55vw;
+        
+        min-height: 50vh;
+        margin : 11.5rem  8rem;
+        border-radius: 2.2rem;
+    
+    
+    }
+    .btn3{
+        padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+        border-radius: 0.9rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        background-color: rgba(5, 143, 120, 0.541);
+        color: rgba(208, 255, 0, 0.986);
+        margin-top:1.4rem ;
+        margin-left: 40%;
+        
+        
+        }
+        .btn3:hover {
+        border-radius:
+            1.3rem;
+        background-color: rgba(66, 219, 19, 0.829);
+        
+        }
+        .heading{
+            position: absolute;
+         
+          margin-top: 0.8rem;
+         margin-left: 10.5%;
+        font-size: 1.9rem;
+        font-weight: bold;
+        color:rgba(17, 90, 226, 0.829)
+        
+        }
+        .score1{
+            position: absolute;
+            margin-top:7.2rem ;
+            margin-left: 2rem;
+            font-size: 1.2rem;
+        font-weight: bold;
+        color:rgba(23, 158, 6, 0.938)
+        }
+        .score2{
+            position: absolute;
+            margin-top:11.8rem ;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+        font-weight: bold;
+        color:rgba(143, 7, 143, 0.938);
+        
+        
+        }
+        .table{position: absolute;
+            width: 50%;
+            margin-left: 6rem;
+            margin-top: 22rem;
+           border:  solid 5px;
+           border-color: rgb(2, 14, 24);
+           background-color: rgba(34, 35, 36, 0.973);
+           color: rgb(240, 239, 245);
+           border-radius: 2.5rem;
+           }
+           
+           th,td,tr{
+               width: 10px;
+               
+           }
+
+           .StartScreen {
+            position: absolute;
+            background-color: rgba(5, 90, 168, 0.993);
+            color: white;
+            z-index: 1;
+            margin-top: 15rem;
+            margin-left: 19rem;
+            text-align: center;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            width: 40%;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 23px;
+        
+        }
+        .againstartscreen,.againstartscreen1{
+        
+            position: absolute;
+            background-color: rgba(5, 90, 168, 0.993);
+            color: white;
+            z-index: 1;
+            margin-top: 15rem;
+            margin-left: 19rem;
+            text-align: center;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            width: 40%;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 23px;
+        
+        
+        
+        
+        
+        }
+        .SelectQuestion{
+
+            position: absolute;
+            background-color: rgba(114, 247, 240, 0.726);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 20px;
+            width: 70vw;
+            
+            min-height: 50vh;
+            margin : 10.5rem  10rem;
+            border-radius: 2.2rem;
+        
+        
+        }
+        .btnS {
+
+            padding: 0.4rem 0.6rem;
+            border-radius: 0.9rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            color: rgba(0, 255, 221, 0.959);
+        margin-top:38.5rem ;
+            
+        }
+        .explanation{
+
+            position: absolute;
+            background-color: rgba(114, 247, 240, 0.726);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 20px;
+            width: 70vw;
+            
+            min-height: 50vh;
+            margin : 5.8rem  10rem;
+            border-radius: 2.2rem;
+            }
+            
+            
+    
+    }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    .form-control{
+        margin-left: 5rem;
+        margin-top: 1rem;
+       width: 80% ; 
+       font-size: medium;
+    }
+    .SelectQuestion{
+
+        position: absolute;
+        background-color: rgba(114, 247, 240, 0.726);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        font-size: 20px;
+        width: 70vw;
+        
+        min-height: 50vh;
+        margin : 10.5rem  10rem;
+        border-radius: 2.2rem;
+    
+    
+    }
+    .btn3{
+        padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+        border-radius: 0.9rem;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        background-color: rgba(5, 143, 120, 0.541);
+        color: rgba(208, 255, 0, 0.986);
+        margin-top:1.4rem ;
+        margin-left: 40%;
+        
+        
+        }
+        .btn3:hover {
+        border-radius:
+            1.3rem;
+        background-color: rgba(66, 219, 19, 0.829);
+        
+        }
+        .heading{
+            position: absolute;
+         
+          margin-top: 1rem;
+         margin-left: 12.5%;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color:rgba(17, 90, 226, 0.829)
+        
+        }
+        .score1{
+            position: absolute;
+            margin-top:5.2rem ;
+            margin-left: 3rem;
+            font-size: 1.7rem;
+        font-weight: bold;
+        color:rgba(23, 158, 6, 0.938)
+        }
+        .score2{
+            position: absolute;
+            margin-top:11.6rem ;
+            margin-left: 2.1rem;
+            font-size: 1.25rem;
+        font-weight: bold;
+        color:rgba(143, 7, 143, 0.938);
+        
+        
+        }
+        .table{position: absolute;
+            width: 50%;
+            margin-left: 10.5rem;
+            margin-top: 18rem;
+           border:  solid 5px;
+           border-color: rgb(2, 14, 24);
+           background-color: rgba(34, 35, 36, 0.973);
+           color: rgb(240, 239, 245);
+           border-radius: 2.5rem;
+           }
+           
+           th,td,tr{
+               width: 10px;
+               
+           }
+           .StartScreen {
+            position: absolute;
+            background-color: rgba(5, 90, 168, 0.993);
+            color: white;
+            z-index: 1;
+            margin-top: 15rem;
+            margin-left: 19rem;
+            text-align: center;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            width: 40%;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 23px;
+        
+        }
+        .againstartscreen,.againstartscreen1{
+        
+            position: absolute;
+            background-color: rgba(5, 90, 168, 0.993);
+            color: white;
+            z-index: 1;
+            margin-top: 15rem;
+            margin-left: 19rem;
+            text-align: center;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            width: 40%;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 23px;
+        
+        
+        
+        
+        
+        }
+        .SelectQuestion{
+
+            position: absolute;
+            background-color: rgba(114, 247, 240, 0.726);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 20px;
+            width: 70vw;
+            
+            min-height: 50vh;
+            margin : 10.5rem  10rem;
+            border-radius: 2.2rem;
+        
+        
+        }
+        .btnS {
+
+            padding: 0.4rem 0.6rem;
+            border-radius: 0.9rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            color: rgba(0, 255, 221, 0.959);
+        margin-top:38.5rem ;
+            
+        }
+        .explanation{
+
+            position: absolute;
+            background-color: rgba(114, 247, 240, 0.726);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 20px;
+            width: 70vw;
+            
+            min-height: 50vh;
+            margin : 5.8rem  10rem;
+            border-radius: 2.2rem;
+            }
+            
+            
+    }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .heading{
+        position: absolute;
+     
+      margin-top: 1.5rem;
+     margin-left: 20%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color:rgba(17, 90, 226, 0.829)
+    
+    }
+    .score1,.score3{
+        position: absolute;
+        margin-top:6rem ;
+        margin-left: 3rem;
+        font-size: 1.6rem;
+    font-weight: bold;
+    color:rgba(23, 158, 6, 0.938)
+    }
+    .score2{
+        position: absolute;
+        margin-top:10.5rem ;
+        margin-left: 2.2rem;
+        font-size: 1.25rem;
+    font-weight: bold;
+    color:rgba(143, 7, 143, 0.938);
+    
+    
+    }
+    .table{position: absolute;
+        width: 50%;
+        margin-left: 15rem;
+        margin-top: 17rem;
+       border:  solid 5px;
+       border-color: rgb(2, 14, 24);
+       background-color: rgba(34, 35, 36, 0.973);
+       color: rgb(240, 239, 245);
+       border-radius: 2.5rem;
+       }
+       
+       th,td,tr{
+           width: 10px;
+           
+       }
+       
+    .form-control{
+        margin-left: 10%;
+        margin-top: 1rem;
+       width: 70% ; 
+       font-size: medium;
+       font-weight: bold;
+    }
+    .SelectQuestion{
+
+        position: absolute;
+        background-color: rgba(114, 247, 240, 0.726);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        font-size: 20px;
+        width: 70vw;
+        
+        min-height: 50vh;
+        margin : 10.5rem  10rem;
+        border-radius: 2.2rem;
+    
+    
+    }
+    .btn3{
+        padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+        border-radius: 0.9rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        background-color: rgba(5, 143, 120, 0.541);
+        color: rgba(208, 255, 0, 0.986);
+        margin-top:1.4rem ;
+        margin-left: 40%;
+        
+        
+        }
+        .btn3:hover {
+        border-radius:
+            1.3rem;
+        background-color: rgba(66, 219, 19, 0.829);
+        
+        }
+        .StartScreen {
+            position: absolute;
+            background-color: rgba(5, 90, 168, 0.993);
+            color: white;
+            z-index: 1;
+            margin-top: 15rem;
+            margin-left: 19rem;
+            text-align: center;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            width: 40%;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 23px;
+        
+        }
+        .againstartscreen,.againstartscreen1{
+        
+            position: absolute;
+            background-color: rgba(5, 90, 168, 0.993);
+            color: white;
+            z-index: 1;
+            margin-top: 15rem;
+            margin-left: 19rem;
+            text-align: center;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            width: 40%;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 23px;
+        
+        
+        
+        
+        
+        }
+        .SelectQuestion{
+
+            position: absolute;
+            background-color: rgba(114, 247, 240, 0.726);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 20px;
+            width: 70vw;
+            
+            min-height: 50vh;
+            margin : 10.5rem  10rem;
+            border-radius: 2.2rem;
+        
+        
+        }
+        .btnS {
+
+            padding: 0.4rem 0.6rem;
+            border-radius: 0.9rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            color: rgba(0, 255, 221, 0.959);
+        margin-top:38.5rem ;
+            
+        }
+        .explanation{
+
+            position: absolute;
+            background-color: rgba(114, 247, 240, 0.726);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 20px;
+            width: 70vw;
+            
+            min-height: 50vh;
+            margin : 5.8rem  10rem;
+            border-radius: 2.2rem;
+            }
+            
+            
+    }
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    .heading{
+        position: absolute;
+     
+      margin-top: 1.5rem;
+     margin-left: 28%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color:rgba(17, 90, 226, 0.829)
+    
+    }
+    .score1{
+        position: absolute;
+        margin-top:6rem ;
+        margin-left: 3rem;
+        font-size: 1.7rem;
+    font-weight: bold;
+    color:rgba(23, 158, 6, 0.938)
+    }
+    .score2{
+        position: absolute;
+        margin-top:10.5rem ;
+        margin-left: 2.2rem;
+        font-size: 1.25rem;
+    font-weight: bold;
+    color:rgba(143, 7, 143, 0.938);
+    
+    
+    }
+    .table{position: absolute;
+        width: 50%;
+        margin-left: 20rem;
+        margin-top: 20rem;
+       border:  solid 5px;
+       border-color: rgb(2, 14, 24);
+       background-color: rgba(34, 35, 36, 0.973);
+       color: rgb(240, 239, 245);
+       border-radius: 2.5rem;
+       }
+       
+       th,td,tr{
+           width: 15px;
+           
+       }
+       
+    .form-control{
+        margin-left: 6.2rem;
+        margin-top: 2.5rem;
+       width: 80% ;
+       height: 20rem;;
+       font-size: medium;
+    }
+    .SelectQuestion{
+
+        position: absolute;
+        background-color: rgba(114, 247, 240, 0.726);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        font-size: 20px;
+        width: 70vw;
+        
+        min-height: 50vh;
+        margin : 10.5rem  10rem;
+        border-radius: 2.2rem;
+    
+    
+    }
+    .btn3{
+padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+border-radius: 0.9rem;
+font-size: 1.5rem;
+text-transform: uppercase;
+background-color: rgba(5, 143, 120, 0.541);
+color: rgba(208, 255, 0, 0.986);
+margin-top:1.4rem ;
+margin-left: 40%;
+
+
+}
+.btn3:hover {
+border-radius:
+    1.3rem;
+background-color: rgba(66, 219, 19, 0.829);
+
+}
+.StartScreen {
+    position: absolute;
+    background-color: rgba(5, 90, 168, 0.993);
+    color: white;
+    z-index: 1;
+    margin-top: 15rem;
+    margin-left: 28.5rem;
+    text-align: center;
+    box-shadow: 0 0 20px 0px rgba(5, 90, 168, 0.993);
+    font-size: 20px;
+    width: 32%;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 23px;
+
+}
+.againstartscreen,.againstartscreen1{
+
+    position: absolute;
+    background-color: rgba(5, 90, 168, 0.993);
+    color: white;
+    z-index: 1;
+    margin-top: 15rem;
+    margin-left: 28.5rem;
+    text-align: center;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    width: 32%;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 23px;
+
+
+
+
+
+}
+.SelectQuestion{
+
+    position: absolute;
+    background-color: rgba(114, 247, 240, 0.726);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 70vw;
+    
+    min-height: 50vh;
+    margin : 10.5rem  12.5rem;
+    border-radius: 2.2rem;
+
+
+}
+.btnS {
+
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.9rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: rgba(0, 255, 221, 0.959);
+margin-top:42rem ;
+    
+}
+.explanation{
+
+position: absolute;
+background-color: rgba(114, 247, 240, 0.726);
+box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+padding: 10px 20px;
+font-size: 20px;
+width: 70vw;
+
+min-height: 50vh;
+margin : 6rem  12.5rem;
+border-radius: 2.2rem;
+}
+
+
+}

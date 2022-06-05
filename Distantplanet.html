@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="Distantplanet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://github.com/Agezao/confetti-js/blob/master/src/confetti.js"></script>
+
+    <title> Distant Planet</title>
+
+</head>
+
+<body>
+  
+ <div class="Question_form hide">
+        <div class="Question ">
+            <h2 class="q"> question will come here</h2>
+            <div id="timerArea"></div>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="ans1" class="answer">
+                    <label for="ans1" id="option1">Answer option</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans2" class="answer">
+                    <label for="ans2" id="option2">Answer option</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans3" class="answer">
+                    <label for="ans3" id="option3">Answer option</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans4" class="answer">
+                    <label for="ans4" id="option4">Answer option</label>
+                </li>
+            </ul>
+            <button id="submit" type> Submit</button>
+        </div>
+    </div> 
+    <div class="timer hide"> 
+
+
+    </div> 
+    <div class="explanationbox hide">
+
+        <div class="explanation" role="alert">
+            <h4 class="status"></h4>
+            <p class="status1"></p>
+            <hr>
+            <hr>
+            <span class="Explain ">Explanation: </span><br><br>
+            <p class="Explaining"></p>
+            <button class="btn1">OK</button>
+        </div>
+
+    </div>
+    <div class="SelectQuestionpage">
+        <h4 class="heading">Welcome To Distant Planet<img src="logo.JPG" width="auto" height="55" alt="logo"
+                style="border-radius: 1.6rem;"></h4>
+        <div class="SelectQuestion">
+            <h3 class="select1"> &nbsp; &nbsp Select Your Destination Where you want to Go !!! 🚀 </h3>
+            <p class="select2">There are  7 Planets Where you can Go...There are level as per planet distance... .there are 5 question per planet<br>  <br>Try to get reach as far as you can.....😎😀😀 👍 </p>
+                <label class="TARGET" for="exampleFormControlSelect1">SELECT DESTINATION 😀😀</label>
+                <select id="Target" class="form-control" id="exampleFormControlSelect1">
+                    <option id="5" class="TARGET"> MERCURY <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😊</h4>
+                    </option>
+                    <option id="10" class="TARGET"> VENUS<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😁</h4>
+                    </option>
+                    <option id="15" class="TARGET">MARS<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🙂</h4>
+                    </option>
+                    <option id="20" class="TARGET">JUPITER<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🤗</h4>
+                    </option>
+                    <option id="25" class="TARGET">SATURN<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😄</h4>
+                    </option>
+                    <option id="30" class="TARGET">URANUS<h4>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;😃</h4>
+                    </option>
+                    <option id="35" class="TARGET">NEPTUNE<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😃😃</h4>
+                    </option>
+                  
+
+
+                </select>
+                <button class="btn3" onclick="getTarget()">OK</button>
+            </div>
+
+        </div>
+    </div>
+     <div  id="myDiv"     class="rocketGame  hide">
+<section id="clear hide">
+            <div class="Score hide">
+
+            </div>
+
+             <div class="StartScreen ">
+                <p>Start Game by clicking Here<br>If you  collide with meteor your score will deducted</p>
+                <button onclick='Reset()' class="startbutton">START</button>
+            </div> 
+            <div class="againstartscreen hide">
+                <p>Start Game by clicking Here<br>Arrow Keys to move<br>If you  collide with meteor your score will deducted</p>
+                <button onclick='Reset()' class="btn2">START</button>
+            </div>
+            <div class="againstartscreen1 hide">
+                <p>Continue by  clicking Here<br>Arrow Keys to move<br>If you  collide with meteor your score will deducted</p>
+                <button class="startbutton1">CONTINUE</button>
+                <button    onclick="quit()"    class="stopbutton">QUIT</button>
+            </div>
+
+            <div class="GameArea">
+
+            </div>
+        </section>
+
+        </div> 
+
+    <div class="showResultpage hide"> 
+        <h4 class="heading"> Your Distant Planet  🌎  Result &nbsp;<img src="logo.JPG" width="auto" height="55" alt="logo"
+            style="border-radius: 1.6rem;"></h4>
+            <h5 class="score1">  "Congratulations!!!  🎉🎉🎊😀😀  You Achieved your  Destination  sucessfully" <br>&nbsp;&nbsp; Well done!!!👍 </h5>
+         
+            <P class="score2">Now You are the part of Distant planet 😀😀 ---(Take a Screen Shot of Your Score rocketd and Share With Your Friends 👦👩‍🦰 )😃    Invite them Too to Distant Planet and learn physics with fun</P>
+
+            <div class="box">
+
+            
+            <div class="showResult">
+<table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th scope="col">NAME:</th>
+        <th   id="showname"   scope="col"> </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">GAME SCORE:</th>
+        <th  id="Game_score" class="scoreS" scope="row">&nbsp;&nbsp;&nbsp; </th>
+        
+      </tr>
+      <tr>
+        <th scope="row">QUIZ MARKS:</th>
+        <th id="quiz_marks" class="marksS"  scope="row">&nbsp;&nbsp;&nbsp;Jacob</th>
+
+      </tr>
+      <tr>
+        <th scope="row">TIMING:</th>
+        <th   id="TIMING" class="timingS" scope="row">&nbsp;&nbsp;&nbsp;Larry the Bird</th>
+      </tr>
+
+      <tr>
+        <th scope="row">FeedBack:</th>
+        <th  id="FeedBack" class="feedbackS" scope="row"> &nbsp; &nbsp;&nbsp;Jacob</th> 
+      </tr>
+      <tr>
+        <th scope="row">DESTINATION:</th>
+        <th id="Player" class="playerS"    scope="row"> </th>
+        
+      </tr>
+    </tbody>
+  </table>
+   
+</div>
+<center>
+    <a href="index.html"><button type="button"    class="btnS btn-primary btn-lg">HOME</button></a>
+  </center>
+        </div>
+        
+        </div> 
+        <script src="confetti.js"></script>
+
+        <script>
+
+            /////////////////////////////////////////////////////////
+            const scores = document.querySelector('.Score');
+            const startscreen = document.querySelector('.StartScreen');
+            const gamearea = document.querySelector('.GameArea');
+            const rocketGame = document.querySelector('.rocketGame');
+            const Question_form = document.querySelector('.Question_form');
+            const startbutton = document.querySelector('.startbutton');
+            const startbutton1 = document.querySelector('.startbutton1');
+            const explanationbox = document.querySelector('.explanationbox');
+            const startTimer = document.querySelector('.timer');
+            const Explaining = document.querySelector('.Explaining');
+            const status = document.querySelector('.status');
+            const status1 = document.querySelector('.status1');
+            const Explain = document.querySelector('.Explain');
+            const againstartscreen = document.querySelector('.againstartscreen');
+            const againstartscreen1 = document.querySelector('.againstartscreen1');
+            const btn1 = document.querySelector('.btn1');
+            const question = document.querySelector(".q");
+            const option1 = document.querySelector("#option1");
+            const option2 = document.querySelector("#option2");
+            const option3 = document.querySelector("#option3");
+            const option4 = document.querySelector("#option4");
+            const submit = document.querySelector("#submit");
+            const timerArea = document.querySelector("#timerArea");
+            const Game_score = document.querySelector("#Game_score");
+            const quiz_marks = document.querySelector("#quiz_marks");
+            const TIMING = document.querySelector("#TIMING");
+            const FeedBack = document.querySelector("#FeedBack");
+            const PlayerF = document.querySelector("#Player");
+            const answers = document.querySelectorAll(".answer");
+            const score1 = document.querySelectorAll(".score1");
+            const showname = document.querySelector("#showname");
+            const SelectQuestionpage = document.querySelector(".SelectQuestionpage");
+            const showResultpage = document.querySelector(".showResultpage");
+            const getname = localStorage.getItem("textvalue");
+            let player = { speed: 5, score: 0 };
+            let ps;
+            let s;
+            let highest = 0;
+            let timer = 60;
+            let clock = 00;
+            let runningTimer;
+            let timeref;
+            let minutes;
+            let seconds;
+            let request;
+            let SZ;
+            let T;
+            let o;
+            let mark = 0;
+            let Q =0;
+            let d;
+
+            startscreen.addEventListener('click', start);// Here the game started
+          
+
+
+            let keys = { ArrowUp: false, ArrowDown: false, ArrowRight: false, ArrowLeft: false }; //Here i have defined the keys
+
+            document.addEventListener('keydown', keyDown);
+            document.addEventListener('keyup', keyUp);
+            function keyDown(ev) {
+                ev.preventDefault();
+                keys[ev.key] = true;
+
+
+            }
+            ////////////////////
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+            //////////////////////////
+            function getTarget() {    // Here i am taking the inputs of destination
+            
+                SelectQuestionpage.classList.add('hide');
+                let Target = document.querySelector("#Target");
+                let a = Target.options[Target.selectedIndex];
+                if (a.id == 5) {
+                    T = 5; d=5;
+                    o = 10;
+
+               
+
+                } else if (a.id == 10) {
+                    T = 10; //T= marks which will reduced every time
+                    o = 5; // o= out of marks
+                    d=10;
+
+                }else if (a.id == 15) {
+                    T = 15;d=15;
+                    o = 5;
+
+                } else if (a.id == 20) {
+                    T = 20;d=20;
+                    o = 10;
+
+                }
+
+                else if (a.id == 25) {
+                    T = 25;d=25;
+                    o = 15;
+
+                }
+
+                else if (a.id == 30) {
+                    T = 30; d=30;
+                    o = 20;
+
+                }
+                else if (a.id == 35) {
+                    T = 35;d=35;
+                    o = 25;
+
+                }
+                else if (a.id == 40) {
+                    T = 40;d=40;
+                    o = 30;
+
+                }
+
+                else if (a.id == 45) {
+                    T = 45;
+                    o = T;
+
+                }
+
+                else if (a.id == 50) {
+                    T = 50;
+                    o = T;
+
+                }
+                else {
+                    alert("Please select Any level &nbsp 😀😀");
+
+                }
+
+                
+                rocketGame.classList.remove('hide');
+                
+
+            }
+            ///////////////////////////////////////
+
+            function changebg(){     //here i am changing the background
+if(d==35){
+if(T==30){document.getElementById('myDiv').style.backgroundImage = 'url(mars.jpg)';}
+if(T==25){document.getElementById('myDiv').style.backgroundImage = 'url(jupitor.jpg)';}
+if(T==20){document.getElementById('myDiv').style.backgroundImage = 'url(saturn.jpg)';}
+if(T==15){document.getElementById('myDiv').style.backgroundImage = 'url(uranus.jpg)';}
+if(T==10){document.getElementById('myDiv').style.backgroundImage = 'url(neptune.jpg)';
+player.start = false;
+    Q=2;clearbg();
+    setTimeout(showReport,7000);}
+
+
+
+
+}else if(d ==30){
+    if(T==25){document.getElementById('myDiv').style.backgroundImage = 'url(mars.jpg)';}
+    if(T==20){document.getElementById('myDiv').style.backgroundImage = 'url(jupitor.jpg)';}
+    if(T==15){document.getElementById('myDiv').style.backgroundImage = 'url(saturn.jpg)';}
+    if(T==10){document.getElementById('myDiv').style.backgroundImage = 'url(uranus.jpg)';
+    player.start = false;
+    Q=2;clearbg();
+    setTimeout(showReport,7000);}
+   
+}else if(d == 25){
+    if(T==20){document.getElementById('myDiv').style.backgroundImage = 'url(mars.jpg)';}
+    if(T==15){document.getElementById('myDiv').style.backgroundImage = 'url(jupitor.jpg)';}
+    if(T==10){document.getElementById('myDiv').style.backgroundImage = 'url(saturn.jpg)';
+    player.start = false;
+    Q=2;clearbg();
+    setTimeout(showReport,7000);}
+   
+}else if(d==20){
+    if(T==15){document.getElementById('myDiv').style.backgroundImage = 'url(mars.jpg)';}
+    if(T==10){document.getElementById('myDiv').style.backgroundImage = 'url(jupitor.jpg)';
+    player.start = false;
+    Q=2;clearbg();
+    setTimeout(showReport,7000);}
+    
+}else if(d==15){
+    if(T==10){document.getElementById('myDiv').style.backgroundImage = 'url(mars.jpg)';
+    player.start = false;
+    Q=2;clearbg();
+                                            
+    setTimeout(showReport,7000);
+}
+}else if(d==10){
+
+    if(T==5){document.getElementById('myDiv').style.backgroundImage = 'url(venus.jpg)';
+    player.start = false;
+    Q=2;clearbg();
+    
+    setTimeout(showReport,7000);
+}
+
+}else if(d==5){
+    if(T== 0){document.getElementById('myDiv').style.backgroundImage = 'url(venus.jpg)';
+}
+    if(T==-5){document.getElementById('myDiv').style.backgroundImage = 'url(mercury.jpg)';
+    player.start = false;
+    Q=2;clearbg();
+    setTimeout(showReport,7000);
+}
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ////////////////////////////////////////////////
+function playerB(){                        //This is i am using in the score rocketd
+
+                let Target = document.querySelector("#Target");
+                let a = Target.options[Target.selectedIndex];
+                if (a.id == 5) {
+                  PlayerF.innerHTML="&nbsp;&nbsp; Mercury";
+
+                } else if (a.id == 10) {
+                    PlayerF.innerHTML="&nbsp;&nbsp; Venus";
+
+                }else if (a.id == 15) {
+                    PlayerF.innerHTML="&nbsp;&nbsp; Mars";
+
+                } else if (a.id == 20) {
+                    PlayerF.innerHTML="&nbsp;&nbsp; Jupiter";
+
+                }
+
+                else if (a.id == 25) {
+                    PlayerF.innerHTML="&nbsp;&nbsp; Saturn ";
+
+                }
+
+                else if (a.id == 30) {
+                    PlayerF.innerHTML="&nbsp;&nbsp; Uranus";
+
+                }
+                else if (a.id == 35) {
+                    PlayerF.innerHTML="&nbsp;&nbsp;Neptune";
+
+                }
+                else {
+                   
+                    PlayerF.innerHTML="&nbsp;&nbsp; Earth";
+
+                }
+
+
+
+
+    
+}
+
+//////////////////////////////////////////////
+            function keyUp(ev) {
+                ev.preventDefault();
+                keys[ev.key] = false;
+                console.log(ev.key);
+            }
+
+            /////////////////////////////////////////////
+            function isCollide(a, b) {        
+                aRect = a.getBoundingClientRect(); //to measure all dimension of object
+                bRect = b.getBoundingClientRect();
+
+                return !((aRect.bottom < bRect.top) || (aRect.top > bRect.bottom) || (aRect.right < bRect.left) || (aRect.left > bRect.right));
+            }
+
+            //////////////////////////////////////////////
+           
+
+
+
+            ///////////////////////////////////////
+
+            function resumeGame() {
+                // startscreen.classList.remove('hide');
+                gamearea.classList.remove('hide');
+                scores.classList.remove('hide');
+                //  Question_form.classList.add('hide');
+
+                // startscreen.addEventListener('click', againstart);
+
+                window.cancelAnimationFrame(request);
+                let rocket = document.querySelector('.rocket');
+                let space = gamearea.getBoundingClientRect();// to measure dimension of space
+
+                if (player.start) {
+
+                    
+                    moverocket(rocket);
+                    crashrocket(rocket);
+                    if (keys.ArrowUp && player.y > (space.top + 10)) {
+                        player.y -= player.speed; //here speed means rocket will move by speed number distance
+                    }
+                    if (keys.ArrowDown && player.y < (space.bottom - 110)) {
+                        player.y += player.speed;
+                    }
+                    if (keys.ArrowLeft && player.x > -20) {
+                        player.x -= player.speed;
+                    }
+                    if (keys.ArrowRight && player.x < (space.width - 100)) {  //50 = width of rocket
+                        player.x += player.speed;
+                    }
+
+                    rocket.style.top = player.y + 'px'; //to attach px behind number eg: 44px
+                    rocket.style.left = player.x + 'px';//to attach px behind number
+
+                    window.requestAnimationFrame(resumeGame);//create loop for space animation
+
+                    if (SZ == 0) {
+                        s = SZ;
+                        SZ++;
+                        highest = 0;
+                    }
+
+                    s++;
+
+
+                    let pt = s - 1;
+
+                    if (pt >= highest) {
+                        highest = pt;
+                    }
+                    scores.innerHTML = "Your Score:" + pt + "<br><br>" + "Highest Score:" + highest;
+
+
+
+
+
+
+
+                }
+            }
+            ///////////////////////////////////////////////////
+            function endGame() {      
+
+                player.start = false;
+
+                Question_form.classList.add('hide');
+                explanationbox.classList.remove('hide');
+                Explaining.innerHTML = questionList.explanation;
+                status.innerHTML = " OPPS!!! 👎  &nbsp &nbsp &nbsp &nbsp &nbsp  😮😮🖤🖤  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp WRONG!!!".fontcolor("red");
+                status1.innerHTML = " No worry........You can do............ All THE BEST 👍👍👍".fontcolor("#A702F5").fontsize(5) + "<br>  keep learning and enjoy the Game😀" + " <br> Restart again......... "
+                btn1.onclick = function () {
+                    explanationbox.classList.add('hide');
+                    rocketGame.classList.remove('hide');
+                    gamearea.classList.remove('hide');
+                   // showReport();
+                    againstartscreen.classList.remove('hide');
+                    againstartscreen.innerHTML = "You lose <br> Your Final Score is " + s + "<br> Press here to restart the Game<br><button class='btn' onclick='againstart()'>Restart</button>&nbsp;&nbsp;&nbsp;<button class='stopbutton' onclick='quit()'>QUIT</button>";
+                changebg();
+                
+                }
+
+            }
+
+            ///////////////////////////////////////////
+function quit(){        //This is used to quit the game
+    player.start = false;
+    Q=1;
+    showResult();
+}
+
+
+
+
+
+       //// //////////////////////////////////////////////////////////////////////
+            const callTimer = () => { //This is a clock
+
+                 timeref = setInterval(() => {
+
+                    minutes = Math.floor(clock / 60);
+                    seconds = clock % 60;
+                    startTimer.innerHTML = " ⏲ : &nbsp " + minutes + ":" + seconds;
+                    clock++;
+                }, 1000)
+
+            }
+
+///////////////////////////////////
+  
+         
+            //////////////////////////////////////////////
+
+            function moverocket(rocket) { //This is used to move the rocket
+                let other = document.querySelectorAll('.other');
+                other.forEach(function (item) {
+                    if (item.y >= 750) {
+                        item.y = -41;
+                        item.style.left = Math.floor(Math.random() * 350) + 'px';
+                    }
+                    item.y += player.speed;
+                    item.style.top = item.y + 'px';
+
+                })
+            }
+            
+
+            ////////////////////////////
+            function crashrocket(rocket) {
+                let other = document.querySelectorAll('.other');
+
+                for (var x = 0, len = other.length; x < len; x++) {
+
+                    if (isCollide(rocket, other[x])) {
+
+                      
+                           if(s>100){
+                          s=s-10;
+                   
+                        break;   
+                           }
+                        break;
+
+                       // }break;
+
+                    }
+
+                }
+            }
+
+////////////////////////////
+
+
+
+
+
+     
+
+            ////////////////////////////////////////////////
+            function gamePlay() {          //THIS WILL START THE GAME
+
+                let rocket = document.querySelector('.rocket');
+                let space = gamearea.getBoundingClientRect();// to measure dimension of space
+
+                if (player.start) {
+
+                    
+                    moverocket(rocket);
+                  crashrocket(rocket);
+
+
+                    if (keys.ArrowUp && player.y > (space.top + 10)) {
+                        player.y -= player.speed; //here speed means rocket will move by speed number distance
+                    }
+                    if (keys.ArrowDown && player.y < (space.bottom - 110)) {
+                        player.y += player.speed;
+                    }
+                    if (keys.ArrowLeft && player.x >-20) {
+                        player.x -= player.speed;
+                    }
+                    if (keys.ArrowRight && player.x < (space.width - 100)) {  //50 = width of rocket
+                        player.x += player.speed;
+                    }
+
+
+
+                    rocket.style.top = player.y + 'px'; //to attach px behind number eg: 44px
+                    rocket.style.left = player.x + 'px';//to attach px behind number
+
+                    request = window.requestAnimationFrame(gamePlay);//create loop for space animation
+                    //console.log(player.score++);
+                    player.score++;
+                    ps = player.score - 1;
+                    s = ps;
+                    if (player.score >= highest) {
+                        highest = ps;
+                    }
+                    scores.innerHTML = "Your Score:" + ps + "<br><br>" + "Highest Score:" + highest;
+
+
+                }
+
+            }
+
+            ////////////////////////////////////////////////////
+            function Reset() {
+                highest = 0;
+            }
+
+            ////////////////////////////////////////////////
+            function startClock() {
+                timerArea.innerHTML = "&nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp        Time Remaining: ".fontcolor("#092A9E").fontsize(5) + timer;
+                if (timer <= 5) {
+                    timerArea.innerHTML = "&nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp        Time Remaining: ".fontcolor("#FF0000").fontsize(5) + timer;
+                }
+
+                /////////////////////////////////////////////////////////////////
+                if (timer <= 0) {         
+                    showResult();
+                   
+                   // 
+                } else {
+                    timer -= 1;
+                    runningTimer = setTimeout(startClock, 1000);
+                }
+            }
+
+            ///////////////////////////////
+            function start() {                          // HERE THE GAME BEGIN
+                // gamearea.classList.remove('hide');
+              
+                callTimer();
+setTimeout(loadquestion,11000);
+                startTimer.classList.remove('hide');
+rocketGame.classList.remove('hide');
+
+                scores.classList.remove('hide');
+                startscreen.classList.add('hide');
+                gamearea.innerHTML = "";
+                player.start = true;
+                player.score = 0;
+                request = window.requestAnimationFrame(gamePlay);
+
+               
+                let rocket = document.createElement('div');//way to create element in document
+                rocket.setAttribute('class', 'rocket');
+                gamearea.appendChild(rocket);
+
+
+
+                
+                player.x = rocket.offsetLeft; // give the mentioned dimension
+                player.y = rocket.offsetTop;
+                // performance(d);
+
+                
+
+
+
+                for (x = 0; x < 3; x++) {
+                    let otherrocket = document.createElement('div');
+                    otherrocket.setAttribute('class', 'other');
+                    otherrocket.y = ((x + 1) * 350) * -1;
+                    otherrocket.style.top = otherrocket.y + 'px';
+                    otherrocket.style.left = Math.floor(Math.random() * 350) + 'px';
+//otherrocket.style.backgroundColor = randomColor();
+                    gamearea.appendChild(otherrocket);
+                }
+                setInterval(increases, 180000)
+                function increases() {
+                    for (x = 0; x < 1; x++) {
+                        let otherrocket = document.createElement('div');
+                        otherrocket.setAttribute('class', 'other');
+                        otherrocket.y = ((x + 1) * 350) * -1;
+                        otherrocket.style.top = otherrocket.y + 'px';
+                        otherrocket.style.left = Math.floor(Math.random() * 300) + 'px';
+                      //  otherrocket.style.backgroundColor = randomColor();
+                        gamearea.appendChild(otherrocket);
+                    }
+                }
+            }
+
+            //////////////////////////////////////////////// 
+
+            // var correct = "Correct!!!";
+            function againScreen() {
+              
+                startbutton.innerHTML = "CONTINUE";
+                Question_form.classList.add('hide');
+                explanationbox.classList.remove('hide');
+                status.innerHTML = " WELL DONE 👍  &nbsp &nbsp &nbsp 🎉🎉😀😀🧡🧡  &nbsp &nbsp " + "&nbsp &nbsp &nbsp &nbsp CORRECT!!!  ".fontcolor("green");
+                status1.innerHTML = " You are fantastic".fontcolor("#A702F5").fontsize(5) + "<br>  keep learning and enjoy the Game 😀" + " <br> please continue......... "
+        Explaining.innerHTML=questionList.explanation;
+                btn1.onclick = function () {
+                    explanationbox.classList.add('hide');
+                    rocketGame.classList.remove('hide');
+                    //showResult();
+                    againstartscreen1.classList.remove('hide');
+                    startbutton1.addEventListener('click', againstart);
+                    changebg();
+                }
+                // rocketGame.classList.remove('hide');
+                // startscreen.classList.remove('hide');
+
+                // startscreen.addEventListener('click', againstart);
+            }
+
+
+
+
+            function againstart() {
+                setTimeout(loadquestion,11000);
+                Question_form.classList.add('hide');
+                rocketGame.classList.remove('hide');
+                 startscreen.classList.add('hide');
+                window.cancelAnimationFrame(request);
+                againstartscreen.classList.add('hide');
+                againstartscreen1.classList.add('hide');
+                gamearea.innerHTML = "";
+
+                player.start = true;
+
+                player.score = s;
+
+                window.requestAnimationFrame(resumeGame);
+
+               
+
+                let rocket = document.createElement('div');//way to create element in document
+                rocket.setAttribute('class', 'rocket');
+                gamearea.appendChild(rocket);
+
+                player.x = rocket.offsetLeft; // give the mentioned dimension
+                player.y = rocket.offsetTop;
+
+
+                for (x = 0; x < 4; x++) {
+                    let otherrocket = document.createElement('div');
+                    otherrocket.setAttribute('class', 'other');
+                    otherrocket.y = ((x + 1) * 350) * -1;
+                    otherrocket.style.top = otherrocket.y + 'px';
+                    otherrocket.style.left = Math.floor(Math.random() * 350) + 'px';
+//otherrocket.style.backgroundColor = randomColor();
+                    gamearea.appendChild(otherrocket);
+                }
+
+
+
+
+
+            }
+////////////////////////////////////////////
+
+//clear the background for shower
+function clearbg(){
+
+    againstartscreen.classList.add('hide');
+    againstartscreen1.classList.add('hide');
+    gamearea.classList.add('hide');
+    shower();
+    
+
+
+}
+
+
+///////////////////////////////////
+function showReport(){       //THIS IS TO  SHOW REPORT rocketD 
+
+Question_form.classList.add('hide');
+explanationbox.classList.add('hide');
+showResultpage.classList.remove('hide');
+// document.querySelector('.score1').innerHTML="GAME QUIT!!! ⏲    &nbsp; &nbsp;   😮😮🖤🖤   You lose your Target Unfortunately  &nbsp;&nbsp; <br> Play again____All THE BEST👍 ".fontcolor("red");
+rocketGame.classList.add('hide');
+startTimer.classList.add('hide');
+gamearea.classList.add('hide');
+highest = 0;
+ timer = 60;
+ clock = 00;
+ Q=0;
+ clearInterval(timeref);
+
+showname.innerHTML= "&nbsp;&nbsp;&nbsp;"+getname;
+Game_score.innerHTML= "&nbsp;&nbsp;&nbsp;"+(s-1);
+quiz_marks.innerHTML="&nbsp;&nbsp;&nbsp;"+mark+"/"+o;
+TIMING.innerHTML= " ⏲ : &nbsp;&nbsp;&nbsp; " + minutes + ":" +seconds;
+let P = (mark/o)*100;
+if(P>=80){
+FeedBack.innerHTML="&nbsp;&nbsp;EXCELLENT😀"; 
+}else if(P>=60){
+FeedBack.innerHTML="&nbsp;&nbsp;VERY GOOD😃"; 
+}else if(P>=40){
+FeedBack.innerHTML="&nbsp;&nbsp;GOOD🙂"; 
+}else if(P>=20){
+FeedBack.innerHTML="&nbsp;&nbsp;NICE🙂"; 
+}else if(P>0){
+FeedBack.innerHTML="&nbsp;POOR(Need to Work Hard)"; 
+}else{
+FeedBack.innerHTML="VERY POOR (Please Play again)"; 
+}
+playerB(); 
+}
+
+
+function showResult(){
+//ye function aLAG ALAG CONDITION PE RESULT SHOW KARTA HAI
+
+    if(Q==1){
+        Question_form.classList.add('hide');
+        explanationbox.classList.add('hide');
+            showResultpage.classList.remove('hide');
+            document.querySelector('.score1').innerHTML="GAME QUIT!!! ⏲    &nbsp; &nbsp;   😮😮🖤🖤   You lose your Target Unfortunately  &nbsp;&nbsp; <br> Play again____All THE BEST👍 ".fontcolor("red");
+            rocketGame.classList.add('hide');
+        startTimer.classList.add('hide');
+           gamearea.classList.add('hide');
+            highest = 0;
+                 timer = 60;
+                 clock = 00;
+                 Q=0;
+                 clearInterval(timeref);
+                
+    showname.innerHTML= "&nbsp;&nbsp;&nbsp;"+getname;
+    Game_score.innerHTML= "&nbsp;&nbsp;&nbsp;"+(s-1);
+    quiz_marks.innerHTML="&nbsp;&nbsp;&nbsp;"+mark+"/"+o;
+    TIMING.innerHTML= " ⏲ : &nbsp;&nbsp;&nbsp; " + minutes + ":" +seconds;
+    let P = (mark/o)*100;
+    if(P>=80){
+        FeedBack.innerHTML="&nbsp;&nbsp;EXCELLENT😀"; 
+    }else if(P>=60){
+        FeedBack.innerHTML="&nbsp;&nbsp;VERY GOOD😃"; 
+    }else if(P>=40){
+        FeedBack.innerHTML="&nbsp;&nbsp;GOOD🙂"; 
+    }else if(P>=20){
+        FeedBack.innerHTML="&nbsp;&nbsp;NICE🙂"; 
+    }else if(P>0){
+        FeedBack.innerHTML="&nbsp;POOR(Need to Work Hard)"; 
+    }else{
+        FeedBack.innerHTML="VERY POOR (Please Play again)"; 
+    }
+    playerB();
+
+
+    }
+
+
+if(timer<=0){
+   
+    
+    Question_form.classList.add('hide');
+    explanationbox.classList.add('hide');
+        showResultpage.classList.remove('hide');
+        document.querySelector('.score1').innerHTML="TIME OUT!!! ⏲    &nbsp; &nbsp;   😮😮🖤🖤   You lose your Destination Unfortunately  &nbsp;&nbsp; <br> Play again____All THE BEST👍 ".fontcolor("red");
+        rocketGame.classList.add('hide');
+    startTimer.classList.add('hide');
+       gamearea.classList.add('hide');
+        highest = 0;
+             timer = 60;
+             clock = 00;
+             clearInterval(timeref);
+            
+showname.innerHTML= "&nbsp;&nbsp;&nbsp;"+getname;
+Game_score.innerHTML= "&nbsp;&nbsp;&nbsp;"+(s-1);
+quiz_marks.innerHTML="&nbsp;&nbsp;&nbsp;"+mark+"/"+o;
+TIMING.innerHTML= " ⏲ : &nbsp;&nbsp;&nbsp; " + minutes + ":" +seconds;
+let P = (mark/o)*100;
+if(P>=80){
+    FeedBack.innerHTML="&nbsp;&nbsp;EXCELLENT😀"; 
+}else if(P>=60){
+    FeedBack.innerHTML="&nbsp;&nbsp;VERY GOOD😃"; 
+}else if(P>=40){
+    FeedBack.innerHTML="&nbsp;&nbsp;GOOD🙂"; 
+}else if(P>=20){
+    FeedBack.innerHTML="&nbsp;&nbsp;NICE🙂"; 
+}else if(P>0){
+    FeedBack.innerHTML="&nbsp;POOR(Need to Work Hard)"; 
+}else{
+    FeedBack.innerHTML="VERY POOR (Please Play again)"; 
+}
+playerB();
+
+}
+
+    if(T==0){
+        explanationbox.classList.add('hide');
+        showResultpage.classList.remove('hide');
+        rocketGame.classList.add('hide');
+    startTimer.classList.add('hide');
+       gamearea.classList.add('hide');
+        highest = 0;
+             timer = 60;
+             clock = 00;
+             clearInterval(timeref);
+            
+             showname.innerHTML= "&nbsp;&nbsp;&nbsp;"+getname;
+Game_score.innerHTML= "&nbsp;&nbsp;&nbsp;"+(s-1);
+quiz_marks.innerHTML="&nbsp;&nbsp;&nbsp;"+mark+"/"+o;
+TIMING.innerHTML= " ⏲ : &nbsp;&nbsp;&nbsp; " + minutes + ":" +seconds;
+let P = (mark/o)*100;
+if(P>=80){
+    FeedBack.innerHTML="&nbsp;&nbsp;EXCELLENT😀"; 
+}else if(P>=60){
+    FeedBack.innerHTML="&nbsp;&nbsp;VERY GOOD😃"; 
+}else if(P>=40){
+    FeedBack.innerHTML="&nbsp;&nbsp;GOOD🙂"; 
+}else if(P>=20){
+    FeedBack.innerHTML="&nbsp;&nbsp;NICE🙂"; 
+}else if(P>0){
+    FeedBack.innerHTML="&nbsp;POOR(Need to Work Hard)"; 
+}else{
+    FeedBack.innerHTML="VERY POOR (Please Play again)"; 
+}
+playerB();
+
+             
+    }
+    
+}
+///////////////////////////////////////////
+
+function shower(){          ///this will show congratulation shower
+
+// start
+
+const start = () => {
+    setTimeout(function() {
+        confetti.start()
+    }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+};
+
+//  Stop
+
+const stop = () => {
+    setTimeout(function() {
+        confetti.stop()
+    }, 8000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+};
+
+start();
+stop();
+
+
+}
+
+
+///////////////////////////////////////////////
+            const quizdb = [
+                {
+                    question: "The ratio of displacement to distance is?",
+                    answers: [
+                        "Equal to or less than 1",
+                        "Always equal 1",
+                        "Always less than 1",
+                        "Always more than 1"],
+                    ans: "ans1",
+                    explanation: " Distance: It is the complete length of the path between any two points.<br> Displacement: It is the direct length between any two points when measured along the minimum Path between them.<br>If a person travel from point A to B to C to D<br>Then, distance = AB+BC+CD and<br>Displacement = AD <img src= Q_1.jpg  margin-left=3rem  width= 350px  height= 180px>".fontcolor("purple").fontsize(5)
+
+
+
+                },
+                {
+                    question: "When a glass rod is rubbed with silk, it_________",
+                    answers: [
+                        "Gains electrons from silk.",
+                        "Gives electrons to silk",
+                        "Gains protons from silk",
+                        "Gives protons to silk.",
+
+                    ], ans: "ans2",
+                    explanation: " On rubbing a glass rod with silk, excess electrons are transferred from glass to silk. So glass rod becomes positive and silk becomes negative.".fontcolor("purple").fontsize(5)
+
+                },
+                { question: "Choose the correct statement?",
+                    answers: [
+                        "a)	A body can be accelerated by frictional force",
+                        "b)	There can be zero friction",
+                        "c)	Kinetic friction is greater than rolling friction",
+                        "d)	Frictional force and area of contact between the two surfaces are proportional"],
+                    ans: "ans3",
+                    explanation: " Because in rolling friction area of body which in contact of surface is less than kinetic friction’s body.".fontcolor("purple").fontsize(5)
+                 },
+                {
+                    question: "In general, metallic ropes are suspended on the rocketriers taking inflammable materials. The reason is ?",
+                    answers: [
+                        "To control the speed of the rocketrier. ",
+                        "To keep the centre of gravity of the rocketrier nearer to the earth.",
+                        "To keep the body of the rocketrier in contact with the earth.",
+                        "None of these."],
+                    ans: "ans3",
+                    explanation: " NONE ".fontcolor("purple").fontsize(5)
+                },
+                {
+                    question: "<video width= 320 height= 240 controls><source src= 1.mp4  type=video/mp4></video>",
+                    answers: [
+                        "a.	180m/s",
+                        "b.	190m/s",
+                        "c.	200m/s",
+                        "d.	210m/s"],
+                    ans: "ans4",
+                    explanation: " V^2=U^2-2as.".fontcolor("purple").fontsize(5)
+                },
+                {
+                    question: "A body starts from rest and travels with uniform acceleration on a straight line. If its velocity after making a displacement of 32 m is 8 m/s, its acceleration is ?",
+                    answers: [
+                        "1m/s^2",
+                        "2m/s^2",
+                        "5m/s^2",
+                        "3m/s^2" ],
+                    ans: "ans1",
+                    explanation: " v^2 =u^2-2as<br>where, v = final velocity<br> u = initial velocity<br> a = acceleration<br>s= displacement<br> ".fontcolor("purple").fontsize(5)
+                },
+                {
+                    question: "An instrument that can be used at a distance, which allows scientist to work the instrument at a safer place is called____________?",
+                    answers: [
+                        "Thermocouple thermometer",
+                        "Manometer",
+                        "Barometer",
+                        "Infrared thermometer"],
+                    ans: "ans1",
+                    explanation: " Thermocouple Thermometer can be used at a distance and allows scientist to work the instrument at a safer place.".fontcolor("purple").fontsize(5)
+                },
+                {
+                    question: "Two similar spheres having +Q and -Q charges are kept at a certain distance. F force acts between the two. If at the middle of two spheres, another similar sphere having +Q charge is kept, then it experiences a force in magnitude and direction as  ?",
+                    answers: [
+                        "zero having no direction.",
+                        "8F towards +Q charge.",
+                        "8F towards -Q charge",
+                        "4F towards +Q charge."],
+                    ans: "ans3",
+                    explanation: " Initially, force between A and C, <img src= q31.jpg  margin-left=3rem  width= 350px  height= 180px><br>When a similar sphere B having charge +Q is kept at the mid-point of line joining A and C, then net force on B is<br><img src= q32.jpg  margin-left=3rem  width= 350px  height= 150px>".fontcolor("purple").fontsize(5)
+                },
+                {
+                    question: "A ball is thrown vertically upwards with a velocity of 20 m s–1 fromtop of a multistorey building. Theheight of the point from where the ball isthrown is 25.0 m from the ground.(a) Howhigh will the ball rise? and (b) how longwill it be before the ball hits the ground?<br>For these problems kinematicequation/equations should be used:",
+                    answers: [
+                        "v^2 =u^2-2as,v = u+at",
+                        "v = u+at, s=ut+1/2at^2",
+                        "v^2 = u^2-2as, s=ut+1/2at^2",
+                        "v^2 = u^2-2as, v = u+at,  s=ut+1/2at^2"],
+                    ans: "ans4",
+                    explanation: "step 1: v^2 = u^2-2as (forHow high will the ball rise )<br>step2:v = u+at (for to find taken time by ball to reach at peak )<br>step 3: s=ut+1/2at^2 (to find take time by ball to reach at ground from peak)<br> <img src= q4.jpg  margin-left=3rem  width= 350px  height= 180px>".fontcolor("purple").fontsize(5)
+                },{ question: " Zoom out the video to see clear <br><video width=320 height=240 controls><source src=2.mp4 type=video/mp4> </video>",
+                answers: [
+                    "a)	f=25N, N=43.30N",
+                    "b)	f=26N, N=43.90N",
+                    "c)	f=20N, N=43.60N ",
+                    "c)	f=20N, N=43.60N"],
+                ans: "ans1",
+                explanation: "F =mgsinѲ<br> N=mgcosѲ <img src= q82.jpg  margin-left=3rem  width= 350px  height= 180px>".fontcolor("purple").fontsize(5)
+             },
+                {
+                    question: "Thermistors which have a very high temperature co-efficient of resistivity belong to the class of solid called________________?",
+                    answers: [
+                        "Dielectrics",
+                        "Insulators",
+                        "Semiconductors",
+                        "Conductors"],
+                    ans: "ans3",
+                    explanation: " : Thermistors which have a very high temperature co-efficient of resistivity belong to the class of solid called Semiconductor.".fontcolor("purple").fontsize(5)
+                }, {
+                    question: "Relation between temperature and resistance of a conductor is ________?",
+                    answers: [
+                        "Rt = Rref [1+t]",
+                        "Rt = Rref [1+α∆t]",
+                        "Rt = Rref [1-αt]",
+                        "Rt = Rref [1-t]"],
+                    ans: "ans2",
+                    explanation: " The relationship between temperature and resistance of a conductor is given by <br> Rt = Rref [1+α∆t] where, <br> •	Rt is the resistance of the conductor at t°C.<br> •	Rref is the resistance of the conductor at reference temperature <br>• 	α is the temperature coefficient of resistance <br>•∆t is the difference between the temperature being measured and the reference temperature. ".fontcolor("purple").fontsize(5)
+                }, {
+                    question: "Match the following : <br> <img src= q5.jpg  margin-left=3rem  width= 350px  height= 180px> ",
+                    answers: [
+                        "a)	1-D, 2-E,3-C, 4-B, 5-A",
+                        "b)	1-A, 2-B, 3-C, 4-D, 5-E",
+                        "c)	1-E, 2-B, 3-C, 4-D, 5-A",
+                        "d)	1-B, 2-D, 3-C, 4-A, 5-E"],
+                    ans: "ans1",
+                    explanation: "<img src= q5a.jpg  margin-left=3rem  width= 350px  height= 180px> ".fontcolor("purple").fontsize(5)
+                },{ question: "The oscillating magnetic field in a plane electromagnetic wave is given as By = (8 × 10-6) sin [2 × 1011t+ 300πx] T, wavelength of the EM wave is_______",
+                    answers: [
+                        "0.80 cm",
+                        "1 × 10^3 cm",
+                        "2 × 10^-2 cm",
+                        "0.67 cm"],
+                    ans: "ans4",
+                    explanation: "Standard equation of magnetic field is By = B0sin(ωt + kx)<br> k=2π/ λ ".fontcolor("purple").fontsize(5)
+                 },{ question: "Zoom out the video to see clear <br><video width=320 height=240 controls><source src=3.mp4 type=video/mp4> </video>",
+                 answers: [
+                     "centripetal acceleration only",
+                     "tangential acceleration only ",
+                     "both tangential and centripetal acceleration.",
+                     "No acceleration"],
+                 ans: "ans3",
+                 explanation: "  <img src= q7.jpg  margin-left=3rem  width= 350px  height= 180px>".fontcolor("purple").fontsize(5)
+              },{ question: "Mirage is a phenomenon due to ?",
+                    answers: [
+                        "refraction of light",
+                        "reflection of light",
+                        "total internal reflection of light",
+                        "diffraction of light."],
+                    ans: "ans3",
+                    explanation: " LM35 is a temperature sensor which has 3 legs(Vcc, Vout, GND).".fontcolor("purple").fontsize(5)
+                 },{ question: "Electrical conductivity of a semiconductor",
+                    answers: [
+                        "Decreases with the rise in its temperature.",
+                        "Increases with the rise in its temperature.",
+                        "Does not change with the rise in its temperature.",
+                        "First increases and then decreases with the rise in its temperature"],
+                    ans: "ans2",
+                    explanation: " With temperature rise, the conductivity of semiconductor increases.".fontcolor("purple").fontsize(5)
+                 },{ question: " The forbidden energy band gap in conductors, semiconductors and insulators are EG1, EG2 and EG3 respectively. The relation among them is _______?",
+                    answers: [
+                        "EG1 = EG2 = EG3",
+                        "EG1 < EG2 < EG3",
+                        "EG1 > EG2 > EG3",
+                        "EG1 < EG2 > EG3"],
+                    ans: "ans2",
+                    explanation: " Resistance temperature detector is an electrical transducer. It is used for measuring the variation in temperature. It is also known as a resistance thermometer.".fontcolor("purple").fontsize(5)
+                 },{ question: "Strain is a _______",
+                    answers: [
+                        "fractional change in volume",
+                        "fractional change in area",
+                        "fractional change in length",
+                        "fractional change in height"],
+                    ans: "ans3",
+                    explanation: " In insulators, the forbidden energy gap is very large, in case of semiconductor it is moderate and in conductors the energy . gap is zero.".fontcolor("purple").fontsize(5)
+                 },{ question: "Zoom out the video to see clear <br><video width=320 height=240 controls><source src=4.mp4 type=video/mp4> </video>",
+                 answers: [
+                     "The moon has rough surface.",
+                     "The moon is cooler than Earth.",
+                     "The value of ‘g’ on the moon is smaller than that on the Earth.",
+                     "There is almost no atmosphere on the moon"],
+                 ans: "ans3",
+                 explanation: " None".fontcolor("purple").fontsize(5)
+              },{ question: "Drift velocity Vd varies with the intensity of electric field as per the relation?",
+                    answers: [
+                        "Vd ∝ E",
+                        "Vd ∝ E²",
+                        "Vd = constant",
+                        "None of above"],
+                    ans: "ans1",
+                    explanation: "  Drift velocity vd = eEmτ, i.e. vd ∝ E.".fontcolor("purple").fontsize(5)
+                 },{ question: "In terms of Rydberg constant R, the wave number of the first Balmer line is?",
+                    answers: [
+                        "R",
+                        "3R",
+                        "5R/36",
+                        "8R/9"],
+                    ans: "ans3",
+                    explanation: " <img src= q6.jpg  margin-left=3rem  width= 350px  height= 180px>".fontcolor("purple").fontsize(5)
+                 },{ question: "A body of mass 10 kg is travelling with uniform speed of 5 m/s. Its kinetic energy is________?",
+                    answers: [
+                        "25 J",
+                        "125 J",
+                        "1250 J",
+                        "1000 J"],
+                    ans: "ans2",
+                    explanation: "KE=1/2 mv^2".fontcolor("purple").fontsize(5)
+                 },{ question: "Two masses 1 g and 4 g are moving with equal kinetic energies. The ratio of the magnitudes of their linear momentum is_______?",
+                    answers: [
+                        "4 : 1",
+                        "1 : 2 ",
+                        "0 : 1 ",
+                        "1 : 6"],
+                    ans: "ans2",
+                    explanation: " K=p^2/2m".fontcolor("purple").fontsize(5)
+                 },{
+                    question: "Zoom out the video to see clear <br><video width=320 height=240 controls><source src=5.mp4 type=video/mp4> </video>",
+                    answers: [
+                        "10s",
+                        "12s", "9s", "6s"
+
+                    ], ans: "ans4",
+                    explanation: "Relative velocity of bird (v) w.r.t.  train(u)be V, then<br>V =v-u<br>V= 5-(-25) = 30m/s (u is negative because both bodies as moving in opposite direction.)<br>Speed = distance/time<img src= q2.jpg  margin-left=3rem  width= 350px  height= 180px>".fontcolor("purple").fontsize(5)
+                },{ question: "What is the Average Power Required to Lift a Mass of 100kg to a Height of 50m in 50 Seconds?",
+                    answers: [
+                        "100",
+                        "980",
+                        "50",
+                        "5000"],
+                    ans: "ans2",
+                    explanation: "Power=work/time<br> Work=force*distance".fontcolor("purple").fontsize(5)
+                 },{ question: "Equipotential at a great distance from a collection of charges whose total sum is not zero are approximately ?",
+                    answers: [
+                        "spheres",
+                        "planes  ",
+                        "paraboloids",
+                        "ellipsoids"],
+                    ans: "ans1",
+                    explanation: " The collection of charges at great distance is considered as a single point charge. The equipotential surfaces due to a point charge are spherical.".fontcolor("purple").fontsize(5)
+                 },{ question: "When a Working Coolie Walks on a Horizontal Platform Having a Load on His Head, the Work Done by Him on the Load is Zero. Identify the Statement True or False?",
+                    answers: [
+                        "True",
+                        "False"],
+                    ans: "ans1",
+                    explanation: "  When a working coolie walks on a horizontal platform with a load on his head, he applies force in the upward direction, which is equal to its weight. The load-displacement is along the horizontal direction. Thus the work done by him on the load is zero.".fontcolor("purple").fontsize(5)
+                 },{ question: "A Gardener Pushes a Lawn Roller Via a Distance of 20m. If He Applies a Force of 20kg Weight in a Direction Inclined at 60° to the Ground, Then What Will Be the Work Done by Him? (g=9.8m/s2)",
+                    answers: [
+                        "a)	400J",
+                        "b)	1960J",
+                        "c)	250J",
+                        "d)	2514J"],
+                    ans: "ans2",
+                    explanation: " Thermocouple is a device which is capable of producing output voltage according to input temperature.".fontcolor("purple").fontsize(5)
+                 },{ question: "The Bullet That Has Fired from a Gun Can Pierce a Target Due to Its __________?",
+                    answers: [
+                        "a)	Heat energy",
+                        "b)	Mechanical energy",
+                        "c)	Acceleration",
+                        "d)	Kinetic energy"],
+                    ans: "ans4",
+                    explanation: " The kinetic energy of a body by the virtue of its motion is known as kinetic energy. Any moving object can do work. Thus, a bullet that is fired from a gun can pierce a target due to its kinetic energy.".fontcolor("purple").fontsize(5)
+                 },{ question: "A point charge +q are placed at a distance d from an isolated conducting plane. The field at a point P on the other side of the plane is________",
+                    answers: [
+                        "Directed perpendicular to the plane and away from the plane.",
+                        "Directed perpendicular to the plane but towards the plane.",
+                        "Directed radially away from the point charge.",
+                        "Directed radially towards the point charge."],
+                    ans: "ans1",
+                    explanation: "The electric field lines are away from positive charge and perpendicular to the surface. Hence the field at a point P on the other side of the plane is directed perpendicular to the plane and away from the plane.".fontcolor("purple").fontsize(5)
+                 },{ question: "Which of the following is correct for thermistors:",
+                    answers: [
+                        "A thermistor is a resistance thermometer",
+                        "Resistance of NTC thermistor increases with increasing temperature",
+                        "Resistance of PTC thermistor decreases with increasing temperature",
+                        "Both 2 & 3"],
+                    ans: "ans1",
+                    explanation: " A thermistor is a resistance thermometer whose resistance is dependent on the temperature. The term thermistor is a combination of thermal and resistor.".fontcolor("purple").fontsize(5)
+                 },{ question: "Three vectors A, B and C satisfy the relation A.B = 0 and A.C = 0. The vector A is parallel to_____",
+                    answers: [
+                        "B",
+                        "C",
+                        "B.C",
+                        "B × C"],
+                    ans: "ans4",
+                    explanation: "Given, A⋅B=0, than A is perp to Balso, A⋅C=0, than A is perp is to C <br>As B×C is perpendicular to both B and C, so B×C is parallel to A. ".fontcolor("purple").fontsize(5)
+                 },{ question: "A body travels along the circumference of a circle of radius 2 m with a linear velocity of 6 m/s . Then its angular velocity is ?",
+                    answers: [
+                        "a)	6 rad /s",
+                        "b)	3 rad /s",
+                        "c)	2 rad /s",
+                        "d)	4 rad /s"],
+                    ans: "ans2",
+                    explanation: " v= w*r<br>v= velocity<br> w=angular velocity<br> r=radius<br> ".fontcolor("purple").fontsize(5)
+                 },{ question: "A body is travelling in a circle at constant speed. It_______",
+                    answers: [
+                        "a)	has an inward acceleration",
+                        "b)	Has constant velocity.",
+                        "c)	has no acceleration",
+                        "d)	has an outward radial acceleration"],
+                    ans: "ans1",
+                    explanation: " Body travelling in circle at constant speed is in uniform circular motion. Magnitude of velocity is constant but direction is changing continuously. hence there is acceleration which is directed towards centre of circle i.e. inward radial acceleration.".fontcolor("purple").fontsize(5)
+                 },{ question: "Which one of the following has maximum inertia ?",
+                    answers: [
+                        "a)	An atom",
+                        "b)	A molecule",
+                        "c)	A one-rupee coin",
+                        "d)	A cricket ball "],
+                    ans: "ans4",
+                    explanation: "The heavier the object is harder to move it or the greater the amount of force required to move it hence higher the inertia.".fontcolor("purple").fontsize(5)
+                 },{ question: "When a bus starts suddenly, the passengers are pushed back. This is an example of which of the following?",
+                    answers: [
+                        "a)	Newton's first law",
+                        "b)	Newton's second law",
+                        "c)	Newton's third law",
+                        "d)	None of the above"],
+                    ans: "ans1",
+                    explanation: " When a bus suddenly starts moving, the passengers fall backward due to the 1st law of Newton.According to Newton’s first law of motion, an object will remain at rest or in uniform motion in a straight line unless acted upon by an external force.".fontcolor("purple").fontsize(5)
+                 },{ question: "Choose the correct statement-?",
+                    answers: [
+                        "a)	If the net external force on a body is zero, its acceleration is zero. Acceleration can be non-zero only if there is a net external force on the body.",
+                        "b)	rate of change of momentum of a body is inversely proportional to the force applied",
+                        "c)	to every action, there is always an unequal and opposite reaction",
+                        "d)	none of above"],
+                    ans: "ans1",
+                    explanation: "Option a) represent the Newton’s first law of motion<br>Option b) rate of change of momentum of a body is directly proportional to the force applied.<br>Option c) to every action, there is always an equal and opposite reaction.".fontcolor("purple").fontsize(5)
+                 },{ question: "A batsman hits back a ball straight in the direction of the bowler without changing its initial speed of 12 m/s. If the mass of the ball is 0.15 kg, determine the impulse imparted to the ball. (Assume linear motion of the ball}?",
+                    answers: [
+                        "a)	3.6Ns ",
+                        "b)	3.4Ns",
+                        "c)	2.2Ns ",
+                        "d)	4.0Ns"],
+                    ans: "ans1",
+                    explanation: " Impulse=force * time duration.".fontcolor("purple").fontsize(5)
+                 },{ question: "A positively charged particle is released from rest in an uniform electric field. The electric potential energy of the charge?",
+                    answers: [
+                        "Remains a constant because the electric field is uniform.",
+                        " Increases because the charge moves along the electric field.",
+                        "Decreases because the charge moves along the electric field.",
+                        "Decreases because the charge moves opposite to the electric field."],
+                    ans: "ans3",
+                    explanation: " The positively charged particle experiences electrostatic force along the direction of electric field, hence moves in the direction of electric field. Electric potential decreases in the direction of electric field. Thus, positive work is done by the electric field on the charge.<br> We = -ΔU = -qΔV=q(Vin – Vf)<br>Hence electrostatic potential energy of the positive charge decreases.".fontcolor("purple").fontsize(5)
+                 },{ question: "Function of transducer is to convert?",
+                    answers: [
+                        "Electrical signal into non electrical quantity",
+                        "Non electrical quantity into electrical signal",
+                        "Electrical signal into mechanical quantity",
+                        "All of these"],
+                    ans: "ans2",
+                    explanation: " A transducer converts some sort of energy to sound (source) or converts sound energy(receiver) to an electrical signal.".fontcolor("purple").fontsize(5)
+                 },{ question: "Gauss’s law will be invalid if ________",
+                    answers: [
+                        "There are magnetic monopoles.",
+                        "The inverse square law is not exactly true.",
+                        "The velocity of light is not a universal constant.",
+                        "None of these."],
+                    ans: "ans1",
+                    explanation: " If at one end, the two wires made of different metals are joined together then a voltage will get produced between the two wires due to difference of temp between the two ends of wires. This effect is observed in thermocouple.".fontcolor("purple").fontsize(5)
+                 },{ question: "Thermistor can be considered as which type of Resistor",
+                    answers: [
+                        "Laser resistor",
+                        "Photo resistor",
+                        "Thermal resistor",
+                        "None of these"],
+                    ans: "ans3",
+                    explanation: " The thermistor can be regarded as a resistance thermometer whose resistance is dependent on the temperature.".fontcolor("purple").fontsize(5)
+                 },{ question: "Electric field lines provide information about ",
+                    answers: [
+                        "field strength ",
+                        "direction",
+                        "Wein Bridge",
+                        "all of these"],
+                    ans: "ans4",
+                    explanation: " None".fontcolor("purple").fontsize(5)
+                 },{ question: "In NTC thermistor on increasing temperature, the  resistance?",
+                    answers: [
+                        "Increase",
+                        "Remain constant",
+                        "Decreases",
+                        "Behaves abruptly"],
+                    ans: "ans3",
+                    explanation: "In NTC with increasing temperature resistance decreases.".fontcolor("purple").fontsize(5)
+                 },{ question: "SI unit of permittivity of free space is :",
+                    answers: [
+                        "Farad ",
+                        "Weber",
+                        "C^2N^-1 m^-2",
+                        "C^2N^-1 m^-2"],
+                    ans: "ans3",
+                    explanation: " None".fontcolor("purple").fontsize(5)
+                 },{ question: "The force per unit charge is known as ",
+                    answers: [
+                        "electric flux ",
+                        "electric field",
+                        "electric potential ",
+                        "electric current"],
+                    ans: "ans2",
+                    explanation: "None".fontcolor("purple").fontsize(5)
+                 },{ question: "The thermistor whose resistance increase by increasing temperature:?",
+                    answers: [
+                        "NTC Thermistor",
+                        "PTC Thermistor",
+                        "None of these",
+                        "Any of these"],
+                    ans: "ans2",
+                    explanation: " In PTC with increasing temperature resistance increases.".fontcolor("purple").fontsize(5)
+                 },{ question: "The angular velocity depends upon the rate of change of the?",
+                    answers: [
+                        "a)	Angular acceleration",
+                        "b)	Angular Distance.",
+                        "c)	Angular Displacement",
+                        "d)	Torque"],
+                    ans: "ans3",
+                    explanation: " The angular velocity is defined as the rate of change of angular displacement and is a vector quantity which specifies the angular speed of an object and the axis about which the object is rotating.".fontcolor("purple").fontsize(5)
+                 },{ question: "Which one of the following is the unit of velocity?",
+                    answers: [
+                        "a)	ms",
+                        "b)	ms^2",
+                        "c)	m/s^2",
+                        "d)	m/s"],
+                    ans: "ans4",
+                    explanation: "Velocity =displacement/change in time.".fontcolor("purple").fontsize(5) } 
+                    ];
+                    
+            var questionCount = Math.ceil(Math.random() * 50);
+            let score = 0;
+            let questionList = quizdb[questionCount];
+
+            
+            const loadquestion = () => {
+                startClock();
+              
+                player.start = false;
+                rocketGame.classList.add('hide');
+
+                Question_form.classList.remove('hide');
+
+                question.innerHTML = questionList.question;
+                option1.innerHTML = questionList.answers[0];
+                option2.innerHTML = questionList.answers[1];
+                option3.innerHTML = questionList.answers[2];
+                option4.innerHTML = questionList.answers[3];
+            };
+            //  loadquestion();
+
+
+
+            const getCheckedAnswer = () => {
+                let answer;
+                answers.forEach((currentElement) => {
+                    if (currentElement.checked) {
+                        answer = currentElement.id;
+                    }
+                });
+                return answer;
+            };
+
+            const checkedselect = () => {
+
+                // if(document.getElementById('ans1').checked){
+                //     getCheckedAnswer();
+                // }else if(document.getElementById('ans2').checked){
+                //     getCheckedAnswer();
+                // }else if(document.getElementById('ans3').checked){
+                //     getCheckedAnswer();
+                // }else if(document.getElementById('ans4').checked){
+                //     getCheckedAnswer();
+                // }else{
+                // alert("hII");
+                // checkedselect();
+                // }
+
+
+
+
+
+            }
+
+            // getCheckedAnswer();
+            submit.addEventListener('click', () => {
+                T=T-1;  
+                timer= 60;         
+                clearInterval(runningTimer);
+
+
+                
+   //  setTimeout(loadquestion,11000);
+                // timer = givequiztime();
+                const checkedAnswer = getCheckedAnswer();
+                if (checkedAnswer == quizdb[questionCount].ans) {
+                    //  score++;
+                    // questionCount++;
+                    // questionList = quizdb[questionCount];
+                    mark++;
+                    againScreen();
+
+
+                }else {
+                    // questionCount++;
+                    // questionList = quizdb[questionCount];
+                    SZ = 0;
+                    endGame();
+                } questionCount = Math.ceil(Math.random() * 50);
+                questionList = quizdb[questionCount];//questionCount++;
+               
+
+            });
+
+
+        </script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+         crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+         crossorigin="anonymous"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+         crossorigin="anonymous"></script>
+</body>
+
+</html>

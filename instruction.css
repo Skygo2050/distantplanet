@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+body{
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: rgba(39, 37, 37, 0.856);
+}
+
+
+
+#Instruction img {
+    height:50px;
+    width: 50px;
+    border-radius: 25px;
+    float:left;
+    margin-right: 20px;
+}
+h4{
+  color: rgb(10, 241, 230);
+  font-family: 'Play', sans-serif;
+}
+p{
+    font-family: 'Play', sans-serif;
+    
+    font-size:22px ;
+   
+    text-align: justify;
+}
+
+#t01 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color:white;   
+    font-family: 'Play', sans-serif;
+  }
+  .rules{
+color: rgb(255, 255, 255);
+
+  }
